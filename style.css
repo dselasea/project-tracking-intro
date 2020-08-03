@@ -182,8 +182,8 @@ nav {
 
 @media screen and (min-width: 1021px) {
   .container::before {
-    width: 42%;
-    height: 49%;
+    width: 45%;
+    height: 55%;
   }
 
   nav {
