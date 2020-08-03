@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
+:root {
+  --red: hsl(0, 100%, 68%);
+  --very-dark-blue: hsl(230, 29%, 20%);
+  --dark-grayish-blue: hsl(230, 11%, 40%);
+  --grayish-blue: hsl(231, 7%, 65%);
+  --light-grayish-blue: hsl(207, 33%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 55%;
+  z-index: -1;
+  border-bottom-left-radius: 39px;
+  background: var(--light-grayish-blue);
+}
+
+img.mockup {
+  max-width: 100%;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+h1,
+a {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.close {
+  display: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: fixed;
+  top: 5rem;
+  width: 80%;
+  right: 10%;
+  box-shadow: 1px 1px 10px -5px #000;
+  transform: translate(115%);
+  transition: all 0.3s ease;
+}
+
+.open {
+  transform: translate(0);
+}
+
+.links li {
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.links li a {
+  display: block;
+  color: var(--very-dark-blue);
+  font-weight: 700;
+}
+
+.links li:nth-child(3) a {
+  border-bottom: 1px solid var(--grayish-blue);
+  padding-bottom: 2rem;
+}
+
+.links li:nth-child(4) {
+  display: none;
+}
+
+.links li:nth-child(5) a {
+  color: var(--grayish-blue);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+}
+
+.content {
+  padding: 4rem 2rem;
+}
+
+.content .mono {
+  text-transform: uppercase;
+  color: var(--grayish-blue);
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.content .mono span {
+  background: var(--very-dark-blue);
+  color: white;
+  padding: 0.3rem;
+  display: inline-block;
+  border-radius: 20px;
+  width: 55px;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  color: var(--very-dark-blue);
+  padding: 1rem 0;
+}
+
+.content-mockup {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: -265px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 0.9rem;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-red {
+  background: var(--red);
+  color: white;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.btn-red:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.btn-live {
+  padding: 0;
+}
+
+@media screen and (min-width: 1021px) {
+  .container::before {
+    width: 42%;
+    height: 49%;
+  }
+
+  nav {
+    padding: 4rem 15rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 3.5rem;
+    width: 0;
+    right: 36rem;
+    box-shadow: none;
+    transform: translate(0);
+  }
+
+  .links li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .links li:nth-child(4) {
+    position: relative;
+    display: block;
+  }
+
+  .links li:nth-child(4) a {
+    position: absolute;
+    color: var(--grayish-blue);
+    left: 40%;
+    top: -11px;
+    font-size: 2rem;
+  }
+
+  .links li:nth-child(3) a {
+    border: none;
+    padding: 0;
+  }
+
+  .links li:nth-child(4) a:hover {
+    text-decoration: none;
+  }
+
+  .links li:nth-child(5) a {
+    color: var(--grayish-blue);
+  }
+
+  .main-content {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 4rem 0 0 0;
+  }
+
+  .content {
+    padding: 4rem 0 0 12rem;
+    width: 50%;
+  }
+
+  .content h1 {
+    font-size: 5rem;
+    padding: 2rem 0;
+  }
+}
